@@ -1,0 +1,165 @@
+{
+  "meta": {
+    "name": "SimpleStacks1",
+    "id": "76616797-c3f9-4daa-9200-091edea7cf82",
+    "difficulty": "easy",
+    "puzzleFormatVersion": "1",
+    "angle": 0,
+    "created": "2021-04-22, 03 h 42 p.m.",
+    "author": "Shiva"
+  },
+  "grid": [
+    {
+      "localPos": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "localPos": {
+        "x": 1,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "localPos": {
+        "x": 2,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "localPos": {
+        "x": 0,
+        "y": 0,
+        "z": 1
+      }
+    },
+    {
+      "localPos": {
+        "x": 0,
+        "y": 0,
+        "z": 2
+      }
+    },
+    {
+      "localPos": {
+        "x": 0,
+        "y": 1,
+        "z": 0
+      }
+    },
+    {
+      "localPos": {
+        "x": 0,
+        "y": 2,
+        "z": 0
+      }
+    },
+    {
+      "localPos": {
+        "x": 1,
+        "y": 1,
+        "z": 0
+      }
+    },
+    {
+      "localPos": {
+        "x": 0,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "localPos": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    }
+  ],
+  "pieces": [
+    {
+      "color": "C84B4B",
+      "segments": [
+        {
+          "localPos": {
+            "x": 0,
+            "y": 2,
+            "z": 0
+          }
+        },
+        {
+          "localPos": {
+            "x": 0,
+            "y": 1,
+            "z": 0
+          }
+        },
+        {
+          "localPos": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "localPos": {
+            "x": 1,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "localPos": {
+            "x": 2,
+            "y": 0,
+            "z": 0
+          }
+        }
+      ]
+    },
+    {
+      "color": "6450C8",
+      "segments": [
+        {
+          "localPos": {
+            "x": 1,
+            "y": 1,
+            "z": 0
+          }
+        },
+        {
+          "localPos": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        },
+        {
+          "localPos": {
+            "x": 0,
+            "y": 1,
+            "z": 1
+          }
+        },
+        {
+          "localPos": {
+            "x": 0,
+            "y": 0,
+            "z": 1
+          }
+        },
+        {
+          "localPos": {
+            "x": 0,
+            "y": 0,
+            "z": 2
+          }
+        }
+      ]
+    }
+  ]
+}
