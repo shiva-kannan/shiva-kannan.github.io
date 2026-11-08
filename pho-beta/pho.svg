@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#34373d"/><stop offset="1" stop-color="#1c1e22"/></linearGradient>
+ <linearGradient id="bowl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7a03a"/><stop offset="1" stop-color="#e0661f"/></linearGradient>
+</defs>
+<rect x="100" y="100" width="824" height="824" rx="185" fill="url(#bg)"/>
+<rect x="295.0" y="359.7" width="34" height="50.5" rx="17.0" fill="#f4ecdd"/>
+<rect x="345.0" y="333.4" width="34" height="103.2" rx="17.0" fill="#f4ecdd"/>
+<rect x="395.0" y="324.5" width="34" height="121.1" rx="17.0" fill="#f4ecdd"/>
+<rect x="445.0" y="259.7" width="34" height="250.7" rx="17.0" fill="#f4ecdd"/>
+<rect x="495.0" y="305.2" width="34" height="159.5" rx="17.0" fill="#f4ecdd"/>
+<rect x="545.0" y="274.7" width="34" height="220.6" rx="17.0" fill="#f4ecdd"/>
+<rect x="595.0" y="319.4" width="34" height="131.3" rx="17.0" fill="#f4ecdd"/>
+<rect x="645.0" y="331.7" width="34" height="106.5" rx="17.0" fill="#f4ecdd"/>
+<rect x="695.0" y="360.6" width="34" height="48.9" rx="17.0" fill="#f4ecdd"/>
+<path d="M232,560 L792,560 C792,710 666,800 512,800 C358,800 232,710 232,560 Z" fill="url(#bowl)"/>
+<rect x="212" y="540" width="600" height="40" rx="20" fill="#fbb256"/>
+<rect x="452" y="800" width="120" height="26" rx="10" fill="#c45518"/>
+</svg>
