@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Pho beta — The Space Between Presets (ADC 2026)</title>
+<title>The Space Between Presets — ADC 2026</title>
 <meta name="description" content="Slides from “The Space Between Presets” at ADC 2026, further reading, and sign-up for the free Pho beta.">
 
 <meta property="og:type" content="website">
@@ -26,6 +26,7 @@
     --card: rgba(255,255,255,0.05);
     --card-hover: rgba(255,255,255,0.09);
     --border: rgba(255,255,255,0.10);
+    --radius: 4px;
   }
 
   * { box-sizing: border-box; }
@@ -35,10 +36,6 @@
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, system-ui, sans-serif;
     color: var(--fg);
     background: var(--bg-0);
-    background-image:
-      radial-gradient(ellipse 90% 45% at 50% -10%, var(--bg-1) 0%, transparent 70%),
-      radial-gradient(ellipse 60% 35% at 100% 100%, rgba(224,102,31,0.10) 0%, transparent 70%);
-    background-attachment: fixed;
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     line-height: 1.5;
@@ -47,68 +44,89 @@
   main {
     max-width: 560px;
     margin: 0 auto;
-    padding: 32px 16px 64px;
+    padding: 40px 16px 64px;
   }
 
-  header { text-align: center; }
-  .logo { width: 96px; height: 96px; display: block; margin: 8px auto 0; }
-  h1 { font-size: 28px; line-height: 1.2; margin: 16px 0 6px; letter-spacing: -0.01em; }
-  .tagline { color: var(--fg-dim); margin: 0 0 8px; font-size: 16px; }
-  .talk { color: var(--fg-dim); font-size: 14px; margin: 0; }
+  /* hero: the talk */
+  .hero { text-align: center; }
+  .eyebrow { color: var(--accent); font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 10px; }
+  h1 { font-size: 34px; line-height: 1.1; margin: 0 0 10px; letter-spacing: -0.02em; text-wrap: balance; }
+  .lede { color: var(--fg-dim); font-size: 16px; margin: 0 0 22px; }
+  .actions { display: grid; gap: 10px; }
+  .btn {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    min-height: 52px; padding: 10px 16px;
+    border-radius: var(--radius); border: 1px solid var(--border);
+    background: var(--card); color: var(--fg);
+    font-weight: 600; text-decoration: none; line-height: 1.25;
+  }
+  .btn small { font-weight: 400; font-size: 12px; color: var(--fg-dim); }
+  .btn:hover, .btn:focus-visible { background: var(--card-hover); }
+  .btn.primary { background: linear-gradient(180deg, var(--accent), var(--accent-2)); color: #1c1e22; border: 0; }
+  .btn.primary:hover, .btn.primary:focus-visible { filter: brightness(1.06); }
+  @media (min-width: 480px) { .actions { grid-template-columns: 1fr 1fr; } }
+
+  /* screenshot */
+  .shot { margin: 32px 0 0; }
+  .shot img { display: block; width: 100%; height: auto; border-radius: var(--radius); border: 1px solid var(--border); background: #1f2024; }
 
   section {
     background: var(--card);
     border: 1px solid var(--border);
-    border-radius: 16px;
+    border-radius: var(--radius);
     padding: 20px;
-    margin-top: 20px;
+    margin-top: 24px;
   }
-  h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin: 0 0 12px; }
+  h2 { font-size: 20px; margin: 0 0 6px; }
+  h2.label { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin: 0 0 4px; }
   p { margin: 0 0 12px; }
   p:last-child { margin-bottom: 0; }
 
-  /* sign-up */
-  form { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
+  /* Pho + sign-up */
+  .app { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 14px; }
+  .app img { flex: 0 0 auto; width: 48px; height: 48px; }
+  .app p { color: var(--fg-dim); margin: 0; }
+  form { display: flex; gap: 8px; flex-wrap: wrap; }
   input[type=email] {
-    flex: 1 1 220px;
+    flex: 1 1 200px;
     min-width: 0;
     font: inherit;
     color: var(--fg);
     background: rgba(0,0,0,0.25);
     border: 1px solid var(--border);
-    border-radius: 10px;
+    border-radius: var(--radius);
     padding: 12px 14px;
   }
   input[type=email]:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
   button {
-    flex: 0 0 auto;
+    flex: 1 0 auto;
     font: inherit;
     font-weight: 600;
     color: #1c1e22;
     background: linear-gradient(180deg, var(--accent), var(--accent-2));
     border: 0;
-    border-radius: 10px;
+    border-radius: var(--radius);
     padding: 12px 18px;
     cursor: pointer;
   }
-  button:disabled, input:disabled { opacity: 0.5; cursor: not-allowed; }
+  @media (min-width: 420px) { button { flex: 0 0 auto; } }
+  input:disabled { opacity: 0.5; cursor: not-allowed; }
+  button:disabled { background: rgba(255,255,255,0.08); color: var(--fg-dim); cursor: not-allowed; }
   .fine { color: var(--fg-dim); font-size: 13px; margin-top: 10px; }
   .hp { position: absolute; left: -9999px; }
 
-  /* links */
-  .links { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
-  .links a {
-    display: flex; justify-content: space-between; align-items: center; gap: 12px;
-    padding: 12px 14px;
-    border-radius: 10px;
-    background: rgba(0,0,0,0.18);
-    border: 1px solid var(--border);
-    color: var(--fg);
-    text-decoration: none;
+  /* papers: one compact row each */
+  .papers { list-style: none; margin: 0; padding: 0; }
+  .papers li + li { border-top: 1px solid var(--border); }
+  .papers a {
+    display: block; position: relative;
+    padding: 11px 22px 11px 0;
+    color: var(--fg); text-decoration: none;
   }
-  .links a:hover, .links a:focus-visible { background: var(--card-hover); }
-  .links .meta { color: var(--fg-dim); font-size: 13px; white-space: nowrap; }
-  .links .what { display: block; color: var(--fg-dim); font-size: 13px; }
+  .papers a::after { content: "\2197"; position: absolute; right: 2px; top: 11px; color: var(--fg-dim); }
+  .papers a:hover b, .papers a:focus-visible b { color: var(--accent); }
+  .papers b { font-weight: 600; }
+  .papers span { display: block; color: var(--fg-dim); font-size: 13px; line-height: 1.4; }
 
   footer { text-align: center; color: var(--fg-dim); font-size: 13px; margin-top: 28px; }
   footer a { color: var(--fg-dim); }
@@ -117,52 +135,58 @@
 <body>
 <main>
 
-  <header>
-    <img class="logo" src="pho.svg" alt="Pho app icon" width="96" height="96">
-    <h1>Pho</h1>
-    <p class="tagline">A voice note app for plugins: record through your synths and effects, and find sounds across all your presets by sound or by words.</p>
-    <p class="talk">From the ADC 2026 talk <em>The Space Between Presets</em></p>
+  <header class="hero">
+    <p class="eyebrow">ADC 2026 &middot; Shiva Kannan</p>
+    <h1>The Space Between Presets</h1>
+    <p class="lede">Slides, papers, and the app from the talk.</p>
+    <div class="actions">
+      <a class="btn primary" href="slides/the-space-between-presets-adc26.pdf">View the slides</a>
+      <a class="btn" href="slides/the-space-between-presets-adc26.pptx" download>Download .pptx<small>with audio and animations</small></a>
+    </div>
   </header>
 
+  <figure class="shot">
+    <img src="explorer-map.jpg" alt="Pho's Explorer map: thousands of synth presets as coloured dots, laid out by how they sound" width="740" height="690">
+  </figure>
+
   <section id="beta">
-    <h2>Free beta</h2>
-    <p>Pho is free while it's in beta. Leave your email and you'll hear when there's a build to try.</p>
+    <div class="app">
+      <img src="pho.svg" alt="" width="48" height="48">
+      <div>
+        <h2>Pho</h2>
+        <p>A voice note app for plugins: record through your synths and effects, and find sounds across all your presets by sound or by words.</p>
+      </div>
+    </div>
     <!--
-      Sign-up goes to Buttondown. To switch it on, set data-buttondown="<your Buttondown username>"
-      on the form below. While it's empty the form stays disabled and says sign-up opens soon.
+      Sign-up goes to the "Pho Beta Sign Up Sheet" Google Form, posted from this page's own fields
+      (Google's form is never shown). entry.1045781291 is that form's Email question.
     -->
-    <form id="signup" data-buttondown="" method="post" target="_blank">
+    <form id="signup" action="https://docs.google.com/forms/d/e/1FAIpQLSfvUN8LvT6GSNTw9KIVUtk4oPXyvCQeTJCGkOvO0RQoh-VF3A/formResponse" method="post" target="signup-sink">
       <label for="email" class="hp">Email address</label>
-      <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required>
-      <input type="hidden" name="tag" value="adc-2026">
+      <input type="email" id="email" name="entry.1045781291" placeholder="you@example.com" autocomplete="email" required>
+      <!-- Google drops responses without the fields its own form page sends. -->
+      <input type="hidden" name="fvv" value="1">
+      <input type="hidden" name="pageHistory" value="0">
+      <input type="hidden" name="fbzx" value="7079056916920725501">
+      <input type="hidden" name="partialResponse" value='[null,null,"7079056916920725501"]'>
+      <input type="hidden" name="submissionTimestamp" value="-1">
       <button type="submit">Notify me</button>
     </form>
-    <p class="fine" id="signup-note">Only emails about the Pho beta. Unsubscribe any time.</p>
-  </section>
-
-  <section id="slides">
-    <h2>Slides</h2>
-    <ul class="links">
-      <li><a href="slides/the-space-between-presets-adc26.pdf">
-        <span>View the slides<span class="what">PDF, opens in your browser</span></span>
-        <span class="meta">PDF</span></a></li>
-      <li><a href="slides/the-space-between-presets-adc26.pptx" download>
-        <span>Download with audio and animations<span class="what">PowerPoint or Keynote</span></span>
-        <span class="meta">PPTX</span></a></li>
-    </ul>
+    <iframe name="signup-sink" title="" hidden></iframe>
+    <p class="fine" id="signup-note" aria-live="polite">Only emails about the Pho beta.</p>
   </section>
 
   <section id="reading">
-    <h2>Further reading</h2>
-    <ul class="links">
-      <li><a href="https://arxiv.org/abs/2211.06687"><span>LAION-CLAP<span class="what">Wu et al., ICASSP 2023</span></span><span class="meta">arXiv</span></a></li>
-      <li><a href="https://arxiv.org/abs/2510.14249"><span>Timbre semantics in CLAP<span class="what">Do joint language-audio embeddings encode perceptual timbre semantics?</span></span><span class="meta">arXiv</span></a></li>
-      <li><a href="https://arxiv.org/abs/2211.11225"><span>TimbreCLIP<span class="what">Jonason &amp; Sturm, 2022</span></span><span class="meta">arXiv</span></a></li>
-      <li><a href="https://arxiv.org/abs/2312.04690"><span>SynthScribe<span class="what">Multimodal tools for synthesizer sound retrieval</span></span><span class="meta">arXiv</span></a></li>
-      <li><a href="https://arxiv.org/abs/2406.00294"><span>CTAG<span class="what">Creative text-to-audio generation via synthesizer programming, ICML 2024</span></span><span class="meta">arXiv</span></a></li>
-      <li><a href="https://arxiv.org/abs/2509.07635"><span>Neural Proxies for Sound Synthesizers<span class="what">Combes et al., JAES 2025</span></span><span class="meta">arXiv</span></a></li>
-      <li><a href="https://arxiv.org/abs/2608.18226"><span>FM-SynAPSE<span class="what">FM synthesizer audio-parameter shared embeddings</span></span><span class="meta">arXiv</span></a></li>
-      <li><a href="https://arxiv.org/abs/2609.31024"><span>Synth-JEPA<span class="what">Renderer-free synthesizer parameter search</span></span><span class="meta">arXiv</span></a></li>
+    <h2 class="label">Further reading</h2>
+    <ul class="papers">
+      <li><a href="https://arxiv.org/abs/2211.06687"><b>LAION-CLAP</b><span>Wu et al., ICASSP 2023</span></a></li>
+      <li><a href="https://arxiv.org/abs/2510.14249"><b>Timbre semantics in CLAP</b><span>Do joint language-audio embeddings encode perceptual timbre semantics?</span></a></li>
+      <li><a href="https://arxiv.org/abs/2211.11225"><b>TimbreCLIP</b><span>Jonason &amp; Sturm, 2022</span></a></li>
+      <li><a href="https://arxiv.org/abs/2312.04690"><b>SynthScribe</b><span>Multimodal tools for synthesizer sound retrieval</span></a></li>
+      <li><a href="https://arxiv.org/abs/2406.00294"><b>CTAG</b><span>Creative text-to-audio generation via synthesizer programming, ICML 2024</span></a></li>
+      <li><a href="https://arxiv.org/abs/2509.07635"><b>Neural Proxies for Sound Synthesizers</b><span>Combes et al., JAES 2025</span></a></li>
+      <li><a href="https://arxiv.org/abs/2608.18226"><b>FM-SynAPSE</b><span>FM synthesizer audio-parameter shared embeddings</span></a></li>
+      <li><a href="https://arxiv.org/abs/2609.31024"><b>Synth-JEPA</b><span>Renderer-free synthesizer parameter search</span></a></li>
     </ul>
   </section>
 
@@ -174,14 +198,15 @@
 
 <script>
   (function () {
+    // Google Forms takes a plain POST; its reply lands in the hidden iframe.
     var form = document.getElementById('signup');
-    var user = (form.getAttribute('data-buttondown') || '').trim();
-    if (user) {
-      form.action = 'https://buttondown.com/api/emails/embed-subscribe/' + encodeURIComponent(user);
-    } else {
-      Array.prototype.forEach.call(form.elements, function (el) { el.disabled = true; });
-      document.getElementById('signup-note').textContent = 'Sign-up opens soon.';
-    }
+    var note = document.getElementById('signup-note');
+    form.addEventListener('submit', function () {
+      setTimeout(function () {
+        form.hidden = true;
+        note.textContent = "Thanks, you're on the list. You'll hear from me when there's a build to try.";
+      }, 300);
+    });
   })();
 </script>
 </body>
